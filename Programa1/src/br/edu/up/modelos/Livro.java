@@ -1,6 +1,6 @@
 package br.edu.up.modelos;
 
-public class Biblioteca {
+public class Livro {
     private String codigo;
     private String titulo;
     private String[] autores;

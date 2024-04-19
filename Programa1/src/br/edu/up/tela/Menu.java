@@ -1,12 +1,12 @@
 package br.edu.up.tela;
 
-import br.edu.up.controle.Livros;
-import br.edu.up.modelos.Biblioteca;
+import br.edu.up.controle.ControleBiblioteca;
+import br.edu.up.modelos.Livro;
 import java.util.Scanner;
 
 public class Menu {
     public void run() {
-        Livros livros = new Livros();
+        ControleBiblioteca livros = new ControleBiblioteca();
         String colorBlack = "\033[30m--------------------------------------------------------------------------------------------------\033[0m";
         String colorRed = "\033[31m--------------------------------------------------------------------------------------------------\033[0m";
         String colorGreen = "\033[32m--------------------------------------------------------------------------------------------------\033[0m";
@@ -25,21 +25,19 @@ public class Menu {
         System.out.println(colorGreen);
         System.out.println(colorBlack);
 
-
-
         Scanner scanner = new Scanner(System.in);
         System.out.println("me diga qual livro vc vai querer ver");
         System.out.println("digite 1 para ver todos os livros");
 
         int escolha = scanner.nextInt();
-        Livros livross = new Livros(); // tt
+        ControleBiblioteca controle = new ControleBiblioteca(); // tt
         switch (escolha) {
             case 1:
-                Biblioteca[] book = livross.getBisbisosteca();
+                Livro[] books = controle.getLivros();
                 System.out.println("Livros");
                 System.out.println(colorBlue);
-                for (int i = 0; i < book.length; i++) {
-                    Biblioteca bi = book[i];
+                for (int i = 0; i < books.length; i++) {
+                    Livro bi = books[i]; // tt
                     String srt = " Titulo : " + bi.getTitulo() + " Ano: " + bi.getAno() + " Codigo " + bi.getCodigo()
                             + "  Isbn" + bi.getIsbn();
                     System.out.println(srt);
