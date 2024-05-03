@@ -36,11 +36,10 @@ public class Menu {
                     colocarLivros();
                     break;
                 case 2:
-                    // Comentário 1: Adicione aqui a lógica para remover um livro da estante
+                    removerLivros();
                     break;
                 case 3:
-                    // Comentário 2: Adicione aqui a lógica para visualizar um livro da estante sem
-                    // removê-lo
+                    visualizarLivros();
                     break;
                 case 4:
                     // Listar todos os livros da estante
@@ -91,8 +90,43 @@ public class Menu {
                 System.out.println(livros[i].getAno());
 
                 break;
-            } 
+            }
         }
         control.setLivros(livros);
+    }
+
+    public void removerLivros() {
+        for (int i = livros.length - 1; i >= 0; i--) {
+            if (livros[i] != null) {
+                livros[i] = null;
+                break;
+            }
+        }
+    }
+
+    public void visualizarLivros() {
+        System.out.println("me diga de 1 a 5 qual livro vc quer ver");
+        Scanner scanner = new Scanner(System.in);
+        int escolha = scanner.nextInt();
+        switch (escolha) {
+            case 1:
+                System.out.println(livros[0]);
+                break;
+            case 2:
+                System.out.println(livros[1]);
+                break;
+            case 3:
+                System.out.println(livros[2]);
+                break;
+            case 4:
+                System.out.println(livros[3]);
+                break;
+            case 5:
+                System.out.println(livros[4]);
+                break;
+
+            default:
+                break;
+        }
     }
 }
